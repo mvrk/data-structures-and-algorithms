@@ -1,6 +1,6 @@
 'use strict';
 
-const { insertAfter } = require("cheerio/lib/api/manipulation");
+const { insertAfter } = require('cheerio/lib/api/manipulation');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
@@ -12,6 +12,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
   arr.forEach(arr.push()+1);
+  return addOne;
 };
 
 
@@ -24,7 +25,11 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  arr.forEach(myFunction);
+  function myFunction(value){
+    value = `${value}!`;
+  }
+  return addExclamation;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +41,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  return arr.toUpperCase();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,11 +55,12 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  return word.toUpperCase();
+  return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
-  speaker.forEach(words);
+  let newArr = [];
+  words.forEach(words);
   return callback(words);
 };
 /* ------------------------------------------------------------------------------------------------
@@ -78,12 +84,11 @@ function addValues(arr, value) {
 }
 
 const addNumbers = (num, arr, times, callback) => {
-  arr.forEach((times) => {
+  for (let i = 0; i < times; i++){
     callback(arr, num);
-  });
+  }
   return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
