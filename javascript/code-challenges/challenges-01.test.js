@@ -11,10 +11,10 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  arr.forEach(arr.push()+1);
-  return addOne;
+  let newArr = [];
+  arr.forEach(element => newArr.push(element + 1));
+  return newArr;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -25,11 +25,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  arr.forEach(myFunction);
-  function myFunction(value){
-    value = `${value}!`;
-  }
-  return addExclamation;
+  let newArr = [];
+  arr.forEach(element => newArr.push(`${element}!`));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,7 +39,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  return arr.toUpperCase();
+  let newArr = [];
+  arr.forEach(element => newArr.push(element.toUpperCase()));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,15 +54,14 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  return word.toUpperCase() + '!';
-};
 
+const greeting = (word) => { return `${word.toUpperCase()}!`; };
 const speaker = (words, callback) => {
   let newArr = [];
-  words.forEach(words);
-  return callback(words);
+  words.forEach(word => newArr.push(callback(word)));
+  return newArr;
 };
+  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -79,16 +78,15 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-function addValues(arr, value) {
-  arr.push(value);
-}
 
-const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times; i++){
-    callback(arr, num);
+let addValues = (arr, value) => { arr.push(value); };
+let addNumbers = (num, arr, times, addValues) => {
+  for (let i = 0; i < times; i++) {
+    addValues(arr, num);
   }
   return arr;
 };
+
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
@@ -108,14 +106,15 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  const inStock =[];
-  availableItems.forEach(item=> {
-    if(item.available){
+  const inStock = [];
+  availableItems.forEach(item => {
+    if (item.available) {
       inStock.push(item.name);
     }
   });
   return inStock;
 };
+
 /* ----------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
@@ -134,7 +133,7 @@ const fizzbuzz = (arr) => {
 
   const outputNumber = [];
 
-  arr.forEach( value => {
+  arr.forEach(value => {
     if (value % 15 === 0) {
       outputNumber.push('Fizz Buzz');
     } else if (value % 3 === 0) {
