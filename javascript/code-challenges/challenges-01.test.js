@@ -1,6 +1,6 @@
 'use strict';
 
-const { insertAfter } = require('cheerio/lib/api/manipulation');
+const { insertAfter } = require("cheerio/lib/api/manipulation");
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
@@ -54,14 +54,13 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
-
 const greeting = (word) => { return `${word.toUpperCase()}!`; };
 const speaker = (words, callback) => {
   let newArr = [];
   words.forEach(word => newArr.push(callback(word)));
   return newArr;
 };
-  
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -77,7 +76,6 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-
 
 let addValues = (arr, value) => { arr.push(value); };
 let addNumbers = (num, arr, times, addValues) => {
@@ -114,7 +112,6 @@ const createList = (availableItems) => {
   });
   return inStock;
 };
-
 /* ----------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
