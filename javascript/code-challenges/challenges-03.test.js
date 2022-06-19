@@ -60,8 +60,6 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // let arr1, arr2 =[];
-  // arr = arr1.push(...arr2);
   return arr.filter(element => !forbiddenValues.includes(element));
 
 
