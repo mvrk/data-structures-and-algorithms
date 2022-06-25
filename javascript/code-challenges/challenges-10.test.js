@@ -7,10 +7,11 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
-  // Solution code here...
+function returnTen(str) {
+  let arr = str.split('');
+  arr.splice(0, str.length - 10);
+  return arr;
 }
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -26,7 +27,9 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let arr = [];
+  arr.map(matrix[i])
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +47,8 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let result = list(map(sum, matrix))
+  return sum(result);
 };
 
 
@@ -71,10 +75,17 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  let sumArr = [];
+  stores.forEach(subArr => {
+    subArr.forEach(num, idx) => {
+  if (newArr[idx]) {
+    newArr[idx] += num;
+  }
+  else {
+    newArr[idx] = num;
+  });
 };
-
+return grandTotal(stores);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -92,7 +103,8 @@ const salesData = (hours, data) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
+Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
+The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
 
 const errands = [
@@ -111,7 +123,11 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  let key = arr.map( => {
+  if Object.values(arr)
+    if
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -218,20 +234,20 @@ Run your tests from the console: jest challenge-12.test.js
 
 describe('Testing challenge 1', () => {
   test('it should return the last 10 characters of a string as an array', () => {
-    expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
-    expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
+    expect(returnTen('hello world')).toStrictEqual(['e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']);
+    expect(returnTen('world')).toStrictEqual(['w', 'o', 'r', 'l', 'd']);
   });
 });
 
 describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
-    expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
+    expect(findMax([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(24);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
-    expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
+    expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
   });
 });
