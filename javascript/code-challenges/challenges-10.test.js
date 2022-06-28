@@ -51,6 +51,17 @@ const totalSum = (matrix) => {
   return sum(result);
 };
 
+// let totalSum = 0;
+// matrix.forEach (newArr => {// slower loop
+//   nestedArr. forEach (number => {// faster loop
+//     totalSum += number;
+//   })
+// })
+
+// return totalSum;
+//------------
+// flat()
+// return matrix.flat().reduce(a, b) => a + b, 0)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -123,11 +134,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  let key = arr.map( => {
-  if Object.values(arr)
-    if
-  }
-
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
