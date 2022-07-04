@@ -49,6 +49,17 @@ const totalSum = (matrix) => {
 
 };
 
+// let totalSum = 0;
+// matrix.forEach (newArr => {// slower loop
+//   nestedArr. forEach (number => {// faster loop
+//     totalSum += number;
+//   })
+// })
+
+// return totalSum;
+//------------
+// flat()
+// return matrix.flat().reduce(a, b) => a + b, 0)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
