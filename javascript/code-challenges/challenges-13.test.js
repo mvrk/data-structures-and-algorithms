@@ -1,5 +1,7 @@
 'use strict';
 
+const { index } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -7,7 +9,15 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-  return arr.indexOf(arr.reduce((a, b) => a.length < b.length ? b : a));
+  let index = -1;
+  let longest = 0;
+  arr.forEach((str, idx) => {
+    if (str.length > longest) {
+      longest = str.length;
+      index = idx;
+    }
+  });
+  return index;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +41,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(a => a.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,8 +53,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  let number = arr.replace(/[^\d]/g,'');
-  return number;
+  return JSON.parse(JSON.stringify(arr).replace(/[-)( ]+/g, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +65,9 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let array = [];
+  str.split('').reduce((e, value, index) => index % 2 === 1 ? array.push(value) : '', []);
+  return array.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +77,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.length === arr.filter(element => element.includes(`:)`)).length;
 };
 
 /* ------------------------------------------------------------------------------------------------
