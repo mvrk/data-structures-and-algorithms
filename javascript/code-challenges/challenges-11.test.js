@@ -19,7 +19,9 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  let arr = `<li>${Object.entries(obj)}</li>`;
+  let arr = Object.entries(obj).map(key => {
+    return `<li>${key[0]}: ${key[1]}</li>`;
+  });
   return arr;
 }
 
@@ -35,7 +37,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let times = 0;
+  input.forEach(element => {
+    times += element.filter(
+      a => a === target).length;
+  });
+  return times;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +141,8 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-return data.filter(person => person.gender.inclues('male')).map(chara)
+  return data.filter(person => person.gender.includes('male')).map(character => character.name).join(' and ');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +153,7 @@ map and reduce to return the name of the character who is the shortest in height
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  return data.reduce(shortest, nextChar) => +shortest.height < +nextChar.height ? shortest : nextChar)
+  return data.reduce((shortest, nextChar) => +shortest.height < +nextChar.height ? shortest : nextChar).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
