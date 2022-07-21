@@ -21,3 +21,8 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+
+1. [Array Reverse](./code-challenge/README.md)
+2. [Array Insert Shift](./code-challenge02/README.md)
+3. [Array Binary Search](./code-challenge03/README.md)
+
