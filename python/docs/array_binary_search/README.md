@@ -8,7 +8,7 @@ to the value of the search key, or -1 if the element is not in the array.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![Array Binary Serch](./Binary_Search.png)
+![Array Binary Serch](Binary_Search.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->

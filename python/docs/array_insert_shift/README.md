@@ -6,7 +6,7 @@ return an array with the new value added at the middle index.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![insertShiftArray](./insertShiftArray.png)
+![insertShiftArray](insertShiftArray.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->

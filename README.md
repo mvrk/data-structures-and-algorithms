@@ -22,7 +22,7 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-1. [Array Reverse](./code-challenge/README.md)
-2. [Array Insert Shift](./code-challenge02/README.md)
-3. [Array Binary Search](./code-challenge03/README.md)
+1. [Array Reverse](python/docs/array_reverse/README.md)
+2. [Array Insert Shift](python/docs/array_insert_shift/README.md)
+3. [Array Binary Search](python/docs/array_binary_search/README.md)
 
