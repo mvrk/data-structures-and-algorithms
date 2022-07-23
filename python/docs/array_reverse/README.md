@@ -4,7 +4,7 @@ Without utilizing any of the built-in methods available to your language,
 return an array with elements in reversed order.
 
 ## Whiteboard Process
-![reverseArray](./reverseArray.png)
+![reverseArray](reverseArray.png)
 
 ## Approach & Efficiency
 
