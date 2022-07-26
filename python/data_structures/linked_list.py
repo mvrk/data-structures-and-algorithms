@@ -63,6 +63,10 @@ adds a new node with the given new value immediately after the first node that h
         if current_node.value == target:
             self.insert(value)
 
+    while current_node.next.value != target:
+        current_node = current_node.next
+        current_node.next = Node(value ,current_node.next)
+
 
 class TargetError:
     pass
