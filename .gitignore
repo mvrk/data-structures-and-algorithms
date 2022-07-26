@@ -229,5 +229,10 @@ $RECYCLE.BIN/
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
-
+venv
+.pytest_cache
+__pycache__
+.vscode
+poetry.lock
+.idea
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
