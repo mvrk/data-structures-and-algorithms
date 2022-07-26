@@ -58,6 +58,11 @@ adds a new node with the given new value immediately after the first node that h
             current_node = current_node.next
         current_node.next = Node(value)
 
+    def insert_before(self, target, value):
+        current_node = self.head
+        if current_node.value == target:
+            self.insert(value)
+
 
 class TargetError:
     pass
