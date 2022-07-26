@@ -17,6 +17,12 @@ Can properly insert multiple nodes into the linked list
 Will return true when finding a value within the linked list that exists
 Will return false when searching for a value in the linked list that does not exist
 Can properly return a collection of all the values that exist in the linked list
+append(): arguments: new value
+adds a new node with the given value to the end of the list
+insert() before: arguments: value, new value
+adds a new node with the given new value immediately before the first node that has the value specified
+insert() after: arguments: value, new value
+adds a new node with the given new value immediately after the first node that has the value specified
     """
 
     def __init__(self):
@@ -46,17 +52,13 @@ Can properly return a collection of all the values that exist in the linked list
         text += "NULL"
         return text
 
-
-
+    def append(self, value):
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+        current_node.next = Node(value)
 
 
 class TargetError:
     pass
 
-
-# linked_list = LinkedList()
-#
-# linked_list.insert("apple")
-#
-# linked_list.insert("banana")
-# print(str(linked_list))
