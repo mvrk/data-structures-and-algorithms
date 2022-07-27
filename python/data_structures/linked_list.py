@@ -101,9 +101,23 @@ class LinkedList:
             current_node = current_node.next
         current_node.next = Node(value, current_node.next)
 
-    while current_node.next.value != target:
-        current_node = current_node.next
-        current_node.next = Node(value ,current_node.next)
+    def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError()
+        current_node = self.head
+        k_node = self.head
+        distance = 0
+
+        while current_node is not None:
+            if distance > k:
+                k_node = k_node.next
+            current_node = current_node.next
+            distance += 1
+
+        if distance > k:
+            return k_node.value
+        else:
+            raise TargetError("Linked list too short!")
 
 
 class TargetError(Exception):
