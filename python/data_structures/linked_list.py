@@ -59,29 +59,52 @@ class LinkedList:
             current_node = current_node.next
         current_node.next = Node(value)
 
+    # def insert_before(self, target, value):
+    # if not self.head or not self.includes(target):
+    #     raise TargetError
+    # current_node = self.head
+    # pre_node = Node(value, next)
+    #
+    # while current_node is not None:
+    #     if current_node.value == target:
+    #         new_node = Node(value, current_node)
+    #         pre_node.next = current_node
+    #         if pre_node is None:
+    #             self.head = new_node
+    #         else:
+    #             pre_node.next = new_node
+    #     pre_node = current_node
+    #     current_node = current_node.next
+
     def insert_before(self, target, value):
         current_node = self.head
         if current_node is None:
-            raise Exception("Not found")
+            raise TargetError('failure')
         if current_node.value == target:
             self.insert(value)
             return
+        if not self.head or not self.includes(target):
+            raise TargetError('failure')
+        current_node = self.head
+
         while current_node.next.value != target:
             current_node = current_node.next
         current_node.next = Node(value, current_node.next)
 
     def insert_after(self, target, value):
+        if not self.head or not self.includes(target):
+            raise TargetError('failure')
         current_node = self.head
         if current_node is None:
-            raise Exception("Not found")
+            raise TargetError('failure')
         while current_node.value != target:
             current_node = current_node.next
-        current_node.next = Node(value,current_node.next)
+        current_node.next = Node(value, current_node.next)
 
     while current_node.next.value != target:
         current_node = current_node.next
         current_node.next = Node(value ,current_node.next)
 
 
-class TargetError:
+class TargetError(Exception):
     pass
