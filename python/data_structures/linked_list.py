@@ -48,7 +48,7 @@ class LinkedList:
         current = self.head
         text = ''
         while current:
-            text += "{ " + current.value + " } -> "
+            text += "{ " + str(current.value) + " } -> "
             current = current.next
         text += "NULL"
         return text
