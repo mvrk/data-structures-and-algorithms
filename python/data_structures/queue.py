@@ -42,7 +42,3 @@ class Queue:
         if self.is_empty():
             raise InvalidOperationError("empty queue!")
         return self.front.value
-
-
-
-
