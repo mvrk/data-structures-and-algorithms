@@ -37,5 +37,6 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            raise InvalidOperationError("Method not allowed on empty collection")
+            # raise InvalidOperationError("Method not allowed on empty collection")
+            return None
         return self.top.value
