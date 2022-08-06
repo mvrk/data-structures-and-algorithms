@@ -24,7 +24,7 @@ def multi_bracket_validation(string):
         return False
     return True
 
-    #
+    # 
     #         close_brackets_stack.push(char)  # Stack }])
     #     elif open_brackets_queue.is_empty or close_brackets_stack.is_empty:
     #         return False
