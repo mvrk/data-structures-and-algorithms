@@ -25,6 +25,7 @@ class BinaryTree:
             value.append(root.value)
             walk(root.left, value)
             walk(root.right, value)
+
         ordered = []
         walk(self.root, ordered)
         return ordered
@@ -36,6 +37,7 @@ class BinaryTree:
             walk(root.left, value)
             value.append(root.value)
             walk(root.right, value)
+
         ordered = []
         walk(self.root, ordered)
         return ordered
@@ -47,6 +49,21 @@ class BinaryTree:
             walk(root.left, value)
             walk(root.right, value)
             value.append(root.value)
+
         ordered = []
         walk(self.root, ordered)
         return ordered
+
+    def find_maximum_value(self):
+        if self.root is None:
+            return
+
+        def walk(root, max):
+            if root is None:
+                return max
+            if root.value > max:
+                max = root.value
+            max = walk(root.left, max)
+            max = walk(root.right, max)
+            return max
+        return walk(self.root, 0)
