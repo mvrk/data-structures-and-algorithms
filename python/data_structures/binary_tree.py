@@ -55,10 +55,20 @@ class BinaryTree:
         return ordered
 
     def find_maximum_value(self):
+        # Base case
         if self.root is None:
             return
-        if root.value > max:
-            max = root.value
-        max = walk(root.left, max)
-        max = walk(root.right, max)
+
+        def walk(root):
+            if root is None:
+                return
+            if root.value > max:
+                max = root.value
+            walk(root.left)
+            walk(root.right)
+
+        walk(self.root)
         return max
+
+        # return max
+        # print('')
